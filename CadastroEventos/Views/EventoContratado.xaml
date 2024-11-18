@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.Views.EventoContratado"
+             Title="EventoContratado" NavigationPage.HasNavigationBar="False" 
+BackgroundColor="{StaticResource AzulBack}">
+
+    <Frame BackgroundColor="{StaticResource AzulBack}" BorderColor="Transparent">
+
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <Label Text="Detalhes do Evento" FontSize="Large" HorizontalOptions="Center" 
+                   FontAttributes="Bold" TextColor="White" />
+
+            <Frame BackgroundColor="{StaticResource AzulFrame}">
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="Nome do Evento" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                           TextColor="White" FontSize="18"/>
+                    <Label Text="{Binding NomeEvento}" HorizontalOptions="Center"
+                           TextColor="White" FontSize="20"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{StaticResource AzulFrame}">
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+
+                    <Label Text="Local do Evento:" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding LugarSelecionado.Descricao}" HorizontalOptions="CenterAndExpand"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="{StaticResource AzulFrame}">
+
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="Auto, Auto"
+                  HorizontalOptions="CenterAndExpand"
+                  ColumnSpacing="10"
+                  RowSpacing="10"
+                  Margin="10">
+
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Data de Início:" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" HorizontalOptions="CenterAndExpand"/>
+
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Data de Término:" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" HorizontalOptions="CenterAndExpand"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Qtd Convidados" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding QntConvidados}" HorizontalOptions="CenterAndExpand"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="Estadia (dias):" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding Estadia}" HorizontalOptions="CenterAndExpand"/>
+
+
+                    <Label Grid.Row="4" Grid.Column="0" Text="Valor Total:" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding ValorTotal, StringFormat='R$ {0:F2}'}" HorizontalOptions="CenterAndExpand"/>
+                </Grid>
+            </Frame>
+
+            <Button Text="Voltar" Clicked="Button_Clicked" HorizontalOptions="Center" 
+                    BackgroundColor="{StaticResource AzulFrame}" TextColor="White"
+                    FontAttributes="Bold"/>
+
+        </VerticalStackLayout>
+
+    </Frame>
+
+
+</ContentPage>
+    
